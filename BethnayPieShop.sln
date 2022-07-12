@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethnayPieShop", "BethnayPieShop\BethnayPieShop.csproj", "{0BFC46C0-5BBA-437D-A335-6488F31748C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanyWorkShop", "BethanyWorkShop\BethanyWorkShop.csproj", "{A00D88CD-EAA4-46C7-A622-E5BD1C8C50BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BFC46C0-5BBA-437D-A335-6488F31748C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFC46C0-5BBA-437D-A335-6488F31748C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFC46C0-5BBA-437D-A335-6488F31748C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFC46C0-5BBA-437D-A335-6488F31748C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A00D88CD-EAA4-46C7-A622-E5BD1C8C50BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A00D88CD-EAA4-46C7-A622-E5BD1C8C50BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A00D88CD-EAA4-46C7-A622-E5BD1C8C50BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A00D88CD-EAA4-46C7-A622-E5BD1C8C50BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D584E0D3-F611-42C8-AA47-C77D33C1F989}
+	EndGlobalSection
+EndGlobal
