@@ -1,16 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BethanyWorkShop.Models;
-namespace BethanyWorkShop.Controllers
+﻿namespace BethanyWorkShop.Models
 {
-    public class StudentController : Controller
+    public class StudentRepository : IStudentRepository
     {
-       /* public ViewResult Student() //Defalut syantax
+        public IEnumerable<Student> GetAllStudents()
         {
-            return View();
-        }*/
-            public ViewResult List() 
-        {
-            //Action Method -> list
             var students = new List<Student> {
                 //Student Data is ready.
                 new Student{FirstName="Amara",LastName="Sriram",Age=21, Gender="M", TeamName="A" },
@@ -39,9 +32,33 @@ namespace BethanyWorkShop.Controllers
                 new Student { FirstName = "Tisha", LastName = "Varshney", Age = 20, Gender = "F", TeamName = "D" },
                 new Student { FirstName = "Aman", LastName = "Asati", Age = 21, Gender = "M", TeamName = "D" }
                 };
-            return View(students);
+            return students;
+        }
+        public IEnumerable<Student> GetAllMaleStudents()
+        {
+               return GetAllStudents().Where(student => student.Gender == "M");
+        }
+        public IEnumerable<Student> GetAllFeMaleStudents()
+        {
+            return GetAllStudents().Where(student => student.Gender == "F");
+        }
+        public IEnumerable<Student> GetTeamAStudents()
+        {
+            return GetAllStudents().Where(student => student.TeamName == "A");
+        }
+        public IEnumerable<Student> GetTeamBStudents()
+        {
+            return GetAllStudents().Where(student => student.TeamName == "B");
+        }
+        public IEnumerable<Student> GetTeamCStudents()
+        {
+            return GetAllStudents().Where(student => student.TeamName == "C");
+        }
+        public IEnumerable<Student> GetTeamDStudents()
+        {
+            return GetAllStudents().Where(student => student.TeamName == "D");
+        }
 
-
+        
     }
-}
 }

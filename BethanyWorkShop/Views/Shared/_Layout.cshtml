@@ -31,8 +31,41 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
+       
+            
+             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" asp-controller="Student" asp-action="List">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListFeMaleStudent">Female Students</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListMaleStudent">Male Students</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListTeamAStudent">TeamA Students</a>
+              </li>
+                 <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListTeamBStudent">TeamB Students</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListTeamCStudent">TeamC Students</a>
+              </li>
+                 <li class="nav-item">
+                <a class="nav-link" asp-controller="Student" asp-action="ListTeamDStudent">TeamD Students</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+    @RenderBody()
+     <main role="main" class="pb-3">
         </main>
     </div>
 
