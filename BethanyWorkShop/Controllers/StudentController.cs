@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using BethanyWorkShop.ViewModel;
 using BethanyWorkShop.Models;
 namespace BethanyWorkShop.Controllers
 {
@@ -18,45 +19,100 @@ namespace BethanyWorkShop.Controllers
         {
             var students = _studentRepository.GetAllStudents();
 
-            return View(students);
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
+
         }
         public ViewResult ListMaleStudent()
         {
             var students = _studentRepository.GetAllMaleStudents();
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+            return View(studentsWithCount);
 
-            return View(students);
         }
         public ViewResult ListFeMaleStudent()
         {
             var students = _studentRepository.GetAllFeMaleStudents();
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
 
-            return View(students);
+            return View(studentsWithCount);
+
         }
         public ViewResult ListTeamAStudent()
         {
             var students = _studentRepository.GetTeamAStudents();
 
-            return View(students);
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
+
+            /*   ViewBag.ListA = students.Count();//Traditional Way
+
+               return View(students);*/
         }
         public ViewResult ListTeamBStudent()
         {
             var students = _studentRepository.GetTeamBStudents();
 
-            return View(students);
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
         }
         public ViewResult ListTeamCStudent()
         {
             var students = _studentRepository.GetTeamCStudents();
 
-            return View(students);
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
         }
         public ViewResult ListTeamDStudent()
         {
             var students = _studentRepository.GetTeamDStudents();
 
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
+        }
+        public ViewResult GetStudentsStartingS()
+        {
+            var students = _studentRepository.GetStudentsStartingS();
+
+            StudentWithCount studentsWithCount = new StudentWithCount();
+            studentsWithCount.students = students;
+            studentsWithCount.count = students.Count();
+            ViewBag.List = students.Count();
+
+            return View(studentsWithCount);
+        }
+        public ViewResult GetStudentCount()
+        {
+            var students = _studentRepository.GetStudentCount();
             return View(students);
         }
-
+       
 
 
 
@@ -108,5 +164,5 @@ namespace BethanyWorkShop.Controllers
 
 
     }*/
-}
+    }
 }

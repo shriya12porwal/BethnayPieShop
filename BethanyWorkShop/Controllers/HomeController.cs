@@ -7,15 +7,18 @@ namespace BethanyWorkShop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IStudentRepository studentRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger , IStudentRepository studentRepository)
         {
             _logger = logger;
+            this.studentRepository = studentRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var studentsCount = studentRepository.GetStudentCount();
+            return View(studentsCount);
         }
 
         public IActionResult Privacy()

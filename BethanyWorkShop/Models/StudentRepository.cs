@@ -2,9 +2,17 @@
 {
     public class StudentRepository : IStudentRepository
     {
+        private readonly AppDbContext appDbContext;
+        public StudentRepository(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
+
         public IEnumerable<Student> GetAllStudents()
         {
-            var students = new List<Student> {
+
+            var students = appDbContext.Students;
+            /*var students = new List<Student> {
                 //Student Data is ready.
                 new Student{FirstName="Amara",LastName="Sriram",Age=21, Gender="M", TeamName="A" },
                 new Student{FirstName="Muskan",LastName="Muskan",Age=20, Gender="F", TeamName="A" },
@@ -31,16 +39,16 @@
                 new Student{FirstName="Saurabh",LastName="Kumar",Age=21, Gender="M", TeamName="D" },
                 new Student { FirstName = "Tisha", LastName = "Varshney", Age = 20, Gender = "F", TeamName = "D" },
                 new Student { FirstName = "Aman", LastName = "Asati", Age = 21, Gender = "M", TeamName = "D" }
-                };
+                };*/
             return students;
         }
         public IEnumerable<Student> GetAllMaleStudents()
         {
-               return GetAllStudents().Where(student => student.Gender == "M");
+               return GetAllStudents().Where(student => student.Gender == "M").OrderBy(student => student.FirstName);
         }
         public IEnumerable<Student> GetAllFeMaleStudents()
         {
-            return GetAllStudents().Where(student => student.Gender == "F");
+            return GetAllStudents().Where(student => student.Gender == "F").OrderByDescending(student => student.FirstName);
         }
         public IEnumerable<Student> GetTeamAStudents()
         {
@@ -59,6 +67,23 @@
             return GetAllStudents().Where(student => student.TeamName == "D");
         }
 
-        
+        public IEnumerable<Student> GetStudentsStartingS()
+        {
+            return GetAllStudents().Where(student => student.FirstName.ToUpper().StartsWith("S")).OrderBy(student => student.FirstName);
+
+        }
+
+        public StudentCount GetStudentCount()
+        {
+            var studentsCount = new StudentCount();
+            studentsCount.totalCount = GetAllStudents().Count();
+           // studentsCount.totalCount = GetAllStudents().GroupBy(student =>new {student.TeamName}).Select(student => student);
+            studentsCount.teamACount = GetTeamAStudents().Count();
+            studentsCount.teamBCount = GetTeamBStudents().Count();
+            studentsCount.teamCCount = GetTeamCStudents().Count();
+            studentsCount.teamDCount = GetTeamDStudents().Count();
+
+            return studentsCount;
+        }
     }
 }

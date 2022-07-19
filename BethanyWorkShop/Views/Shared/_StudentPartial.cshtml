@@ -1,0 +1,44 @@
+﻿@using BethanyWorkShop.ViewModel
+@model StudentWithCount
+
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Team Name</th>
+            </tr>
+          </thead>
+          
+            <tbody>
+            @foreach(var student in Model.students)
+            {
+
+                <tr>
+                    <td><a href="">@student.FirstName</a></td>
+                    <td>@student.LastName</td>
+                    <td>@student.Age </td>
+                    <td>@student.TeamName</td>
+
+                </tr>                  
+
+            } 
+           
+            </tbody>
+        </table>
+         <h1>
+             
+                Total Student Count ->  @Model.count
+
+                
+
+            </h1>
+
+    </body>
+</html>

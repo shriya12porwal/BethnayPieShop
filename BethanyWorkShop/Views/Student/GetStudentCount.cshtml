@@ -1,0 +1,84 @@
+﻿@using BethanyWorkShop.ViewModel
+@model StudentCount
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+			<style>
+		body {
+			
+		}
+		
+		#e2
+		{
+			 text-align: center;
+			 font-size: 25px;
+			 border: 5px;
+			 background: url("https://cdn.wallpapersafari.com/38/60/RvLtEc.jpg");
+		}
+		
+</style>
+</head>
+
+<div id="e2"> 
+	<h3> .NET Students Report </h3>
+</div>
+
+<body>
+	<div class="border border-1">
+		
+  <div class="table-responsive-md">
+  <table class="table table-sm table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Team.</th>
+					<th scope="col">Count</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					
+					<td><a class="nav-link" asp-controller="Student" asp-action="ListTeamAStudent">TeamA</a> </td>	
+					 
+					<td>@Model.teamACount</td>
+					
+				</tr>
+				<tr>
+					 
+						<td><a class="nav-link" asp-controller="Student" asp-action="ListTeamBStudent">TeamB</a></td>
+					
+					<td>@Model.teamBCount</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<a class="nav-link" asp-controller="Student" asp-action="ListTeamCStudent">TeamC</a>
+					 </td>
+					<td>@Model.teamCCount</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<a class="nav-link" asp-controller="Student" asp-action="ListTeamDStudent">TeamD</a>
+					 </td>
+					<td>@Model.teamDCount</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<a class="nav-link" asp-controller="Student" asp-action="List">Total</a>
+					 </td>
+					<td ><b>@Model.totalCount</b> </td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</span>
+</div>
+	
+	
+	
+</body>
+</html>

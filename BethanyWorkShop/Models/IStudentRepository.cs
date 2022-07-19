@@ -8,7 +8,9 @@
     IEnumerable<Student> GetTeamAStudents();
     IEnumerable<Student> GetTeamBStudents();
     IEnumerable<Student> GetTeamCStudents();
-        IEnumerable<Student> GetTeamDStudents();
-       
+    IEnumerable<Student> GetTeamDStudents();
+    IEnumerable<Student> GetStudentsStartingS();
+    public StudentCount GetStudentCount();
+
     }
 }
