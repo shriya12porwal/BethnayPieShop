@@ -112,7 +112,28 @@ namespace BethanyWorkShop.Controllers
             var students = _studentRepository.GetStudentCount();
             return View(students);
         }
-       
+
+
+        public ViewResult Details(int id)
+        {
+            var students = _studentRepository.GetAllStudents().FirstOrDefault(student => student.StudentID == id);
+            return View(students);
+
+        }
+        public ViewResult Edit(int id)
+        {
+            var students = _studentRepository.GetAllStudents().FirstOrDefault(student => student.StudentID == id);
+            return View(students);
+
+        }
+        //Controller -> Repository ->appdbContext ->dtabase
+        [HttpPost]
+        public IActionResult UpdateStudent(Student student)
+        {
+            _studentRepository.UpdateStudent(student);
+            return RedirectToAction("List");
+        }
+
 
 
 

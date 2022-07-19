@@ -85,5 +85,12 @@
 
             return studentsCount;
         }
+        // Repository ->appdbContext ->dtabase
+
+        public int UpdateStudent(Student student)
+        {
+            appDbContext.Students.Update(student);
+            return appDbContext.SaveChanges();
+        }
     }
 }

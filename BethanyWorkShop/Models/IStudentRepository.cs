@@ -11,6 +11,8 @@
     IEnumerable<Student> GetTeamDStudents();
     IEnumerable<Student> GetStudentsStartingS();
     public StudentCount GetStudentCount();
+    int UpdateStudent(Student student);
+
 
     }
 }
