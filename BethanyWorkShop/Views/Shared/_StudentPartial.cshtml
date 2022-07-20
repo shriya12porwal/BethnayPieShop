@@ -30,20 +30,19 @@
                     <td>@student.LastName</td>
                     <td>@student.Age </td>
                     <td>@student.TeamName</td>
-
+                     <td><a asp-action="Remove" asp-route-id="@student.StudentID">Remove</a></td>
                 </tr>                  
 
             } 
            
             </tbody>
         </table>
-         <h1>
+         <h5>
              
                 Total Student Count ->  @Model.count
-
-                
-
-            </h1>
-
+            </h5>
+    <div>
+        <a asp-action="Create"> Create</a><br />
+    </div>
     </body>
 </html>

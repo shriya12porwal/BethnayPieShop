@@ -92,5 +92,16 @@
             appDbContext.Students.Update(student);
             return appDbContext.SaveChanges();
         }
+        public int CreateStudent(Student student)
+        {
+            appDbContext.Students.Add(student);
+            return appDbContext.SaveChanges();
+        }
+
+        public int RemoveStudent(Student student)
+        {
+            appDbContext.Students.Remove(student);
+            return appDbContext.SaveChanges();
+        }
     }
 }

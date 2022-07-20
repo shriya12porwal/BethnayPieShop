@@ -12,6 +12,9 @@
     IEnumerable<Student> GetStudentsStartingS();
     public StudentCount GetStudentCount();
     int UpdateStudent(Student student);
+    int CreateStudent(Student student);
+    int RemoveStudent(Student student);
+
 
 
     }

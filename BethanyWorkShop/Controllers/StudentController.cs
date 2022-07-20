@@ -126,6 +126,18 @@ namespace BethanyWorkShop.Controllers
             return View(students);
 
         }
+        public ViewResult Create()
+        {
+            
+            return View();
+
+        }
+        public ViewResult Remove(int id)
+        {
+            var student = _studentRepository.GetAllStudents().FirstOrDefault(student => student.StudentID == id);
+            return View(student);
+
+        }
         //Controller -> Repository ->appdbContext ->dtabase
         [HttpPost]
         public IActionResult UpdateStudent(Student student)
@@ -133,7 +145,20 @@ namespace BethanyWorkShop.Controllers
             _studentRepository.UpdateStudent(student);
             return RedirectToAction("List");
         }
+        [HttpPost]
+        public IActionResult CreateStudent(Student student)
+        {
+            _studentRepository.CreateStudent(student);
+            return RedirectToAction("List");
+        }
 
+
+        public IActionResult RemoveStudent(Student student)
+        {
+           // var student = _studentRepository.GetAllStudents().FirstOrDefault(student => student.StudentID == id);
+            _studentRepository.RemoveStudent(student);
+            return RedirectToAction("List");
+        }
 
 
 
